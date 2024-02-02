@@ -1,0 +1,24 @@
+def calculate_speed(distance, time):
+    try:
+        # Converti le distanze e il tempo in numeri a virgola mobile
+        distance = float(distance)
+        time = float(time)
+
+        # Gestisci il caso in cui il tempo sia minore o uguale a zero
+        if time <= 0:
+            raise ValueError("Il tempo deve essere maggiore di zero")
+
+        # Calcola la velocità utilizzando la formula: velocità = distanza / tempo
+        speed = distance / time
+        return speed
+
+    except ValueError as e:
+        return f"Errore: {e}"
+
+# Richiedi all'utente di inserire i dati
+distance_input = input("Inserisci la distanza (in chilometri): ")
+time_input = input("Inserisci il tempo (in ore): ")
+
+# Calcola e stampa il risultato
+result = calculate_speed(distance_input, time_input)
+print(f"Velocità: {result} km/h")
